@@ -70,6 +70,7 @@ const constants = {
       hexColour: theme.colors.lemonGreen,
     },
   ],
+  filterTypes: ['checkbox', 'radio'],
 }
 
 module.exports = constants
