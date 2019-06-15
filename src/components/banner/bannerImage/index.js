@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Youtube from 'react-youtube'
 import { Column } from '../../grid'
 import BannerTitle from '../bannerTitle'
 import BannerSubtitle from '../bannerSubtitle'
@@ -17,6 +18,7 @@ const BannerImage = ({
   large,
   medium,
   allowContentUnderflow,
+  videoId,
 }) => (
   <StyledWrapper
     color={color}
@@ -37,6 +39,7 @@ const BannerImage = ({
             {children}
           </Column>
         </StyledRow>
+        {videoId && <Youtube videoId={videoId} />}
       </StyledContainer>
     )}
   </StyledWrapper>
@@ -56,6 +59,7 @@ BannerImage.propTypes = {
     PropTypes.node,
   ]),
   allowContentUnderflow: PropTypes.bool,
+  videoId: PropTypes.string,
 }
 
 BannerImage.defaultProps = {
@@ -71,6 +75,7 @@ BannerImage.defaultProps = {
   children: null,
   date: null,
   allowContentUnderflow: false,
+  videoId: null,
 }
 
 export default BannerImage
